@@ -1,0 +1,29 @@
+.my-class {
+    background:rgb(128, 104, 92);
+}
+.my-col{
+    background: whitesmoke;
+}
+.my-wht{
+    background: white;
+}
+.my-red{
+    background: rgb(221, 76, 76);
+}
+img {
+    width: 100px;
+    height: 100px;
+    }
+
+    .my-colr{
+        background: rgb(236, 230, 230) ;
+    }
+    h1 ,h3{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+.img-rounded{
+    width: 20px;
+    height: 20px;
+
+}
