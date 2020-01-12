@@ -13,12 +13,13 @@ document.querySelector('.btn-roll').addEventListener('click', () => {
     let Dom = document.querySelector('.img-thumbnail')
     Dom.style.display = 'block';
     Dom.src = 'dice-' + dice + '.png';
-    if (dice !== 1) {
+    let y = parseInt(document.querySelector("#glb-"+activePlayer).textContent);
+    if (dice !== 1 || (y+dice)===50) {
         //add score
         random += dice;
         document.querySelector("#scr-" + activePlayer).textContent = random;
         let x = parseInt(document.querySelector("#glb-"+activePlayer).textContent);
-        if((random+x) >20){
+        if((random+x) >50){
             setTimeout(()=>
         {
             nextPlyr();
@@ -54,7 +55,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
     //add to global
     score[activePlayer] += random;
     ///check if more than 50 or not
-    if(score[activePlayer]>20){
+    if(score[activePlayer]>50){
         score[activePlayer] -= random;
         setTimeout(()=>
         {
@@ -67,7 +68,7 @@ document.querySelector('.btn-hold').addEventListener('click', () => {
 
     document.querySelector("#glb-" + activePlayer).textContent = score[activePlayer];
 
-    if (score[activePlayer] === 20) {
+    if (score[activePlayer] === 50) {
         //winner and loser
         document.querySelector('#ply-' + activePlayer).textContent = 'Winner !!';
         document.querySelector('.img-thumbnail').style.display = 'none';
